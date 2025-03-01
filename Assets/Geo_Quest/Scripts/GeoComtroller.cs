@@ -7,18 +7,23 @@ using UnityEngine.SceneManagement;
 
 public class GeoComtroller : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D rb; SpriteRenderer rbSprite;  
     int speed = 3;
     public string nextLevel = "Scene_2";
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rbSprite = rb.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            rbSprite.color = Color.red;
+        }
         if (Input.GetKeyDown(KeyCode.A))
         {
             rb.velocity = new Vector2(-1, rb.velocity.y);
@@ -27,6 +32,15 @@ public class GeoComtroller : MonoBehaviour
         {
             rb.velocity = new Vector2(1, rb.velocity.y);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            rbSprite.color = Color.cyan;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            rbSprite.color = Color.blue;
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.W))
         {
