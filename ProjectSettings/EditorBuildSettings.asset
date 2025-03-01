@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Geo_Quest/Scenes/Scene_1.unity
+    path: Assets/Geo_Quest/Scenes/Level 1.unity
     guid: 8fcbbf205b9dfa043a98c17f73b8a9f0
   - enabled: 1
-    path: Assets/Geo_Quest/Scenes/Scene_2.unity
+    path: Assets/Geo_Quest/Scenes/Level 2.unity
     guid: f76be8a8f9c640a4b975983da9fa68e6
   m_configObjects: {}
