@@ -23,10 +23,11 @@ public class Collectible : MonoBehaviour
     {
         switch (collision.tag)
         {
-            case "Collectible":
+            case "Coin":
                 {
                     points++;
                     Debug.Log("points "+points);
+                    Destroy(collision.gameObject);
                     break;
                 }
            

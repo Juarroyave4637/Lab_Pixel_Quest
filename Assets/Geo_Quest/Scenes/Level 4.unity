@@ -132,11 +132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 53812626}
   - component: {fileID: 53812625}
-  - component: {fileID: 53812624}
   - component: {fileID: 53812623}
   m_Layer: 0
   m_Name: 'Collectible Diamond '
-  m_TagString: Collectible
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,33 +189,6 @@ PolygonCollider2D:
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
---- !u!50 &53812624
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53812622}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &53812625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -627,6 +599,7 @@ GameObject:
   - component: {fileID: 921617067}
   - component: {fileID: 921617066}
   - component: {fileID: 921617065}
+  - component: {fileID: 921617070}
   - component: {fileID: 921617069}
   - component: {fileID: 921617068}
   m_Layer: 0
@@ -790,6 +763,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &921617070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921617064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec70e45c67c1b464f81e1ce87dd980e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
 --- !u!1 &989854347
 GameObject:
   m_ObjectHideFlags: 0
