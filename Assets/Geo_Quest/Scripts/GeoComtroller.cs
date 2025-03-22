@@ -69,7 +69,9 @@ public class GeoComtroller : MonoBehaviour
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
     }
 
+    public string nextlevel = "GeoLevel_2";
 
+    private int coinCounter = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
@@ -92,6 +94,14 @@ public class GeoComtroller : MonoBehaviour
                     points++;
                     Debug.Log("points " + points);
                     //textMeshPro.text = points;
+                    break;
+                }
+            case "Coin":   {
+
+                    coinCounter++;
+
+                    Destroy(collision.gameObject);
+
                     break;
                 }
         }
