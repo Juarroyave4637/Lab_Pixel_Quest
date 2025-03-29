@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GeoComtroller : MonoBehaviour
 {
-    private Rigidbody2D rb; SpriteRenderer rbSprite;  
+    private Rigidbody2D rb; SpriteRenderer rbSprite;
     int speed = 3;
     public int points = 0;
     [SerializeField] private TextMeshPro textMeshPro;
@@ -69,41 +69,53 @@ public class GeoComtroller : MonoBehaviour
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
     }
 
+    public Transform respawnPoint;
     public string nextlevel = "GeoLevel_2";
-
-    private int coinCounter = 0;
+    private int _coinCounter = 0;
+    private int _health = 5;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
-            case "Finish":
-                {
+            case "Finish": {
                     SceneManager.LoadScene(nextLevel);
                     break;
                 }
-            case "Death":
-                {
+            case "Death": {
+                    _health--;
+                    if (_health <= 0) {
+                        string thislevel = SceneManager.GetActiveScene().name;
+                        SceneManager.LoadScene(thislevel);
+                    }
+                    else {
+                        transform.position = respawnPoint.position;
+                    }
+                    break;
                     string thisLevel = SceneManager.GetActiveScene().name;
                     SceneManager.LoadScene(thisLevel);
                     Debug.Log("Player Has Died");
                     break;
-
                 }
-            case "Collectible":
-                {
+            case "Collectible": {
                     points++;
                     Debug.Log("points " + points);
                     //textMeshPro.text = points;
                     break;
                 }
-            case "Coin":   {
-
-                    coinCounter++;
-
+            case "Coin": {
+                    _coinCounter++;
                     Destroy(collision.gameObject);
-
+                    break;
+                }
+            case "Health":
+                {
+                    if (_health < 3)
+                    {
+                        _health++;
+                        Destroy(collision.gameObject);
+                    }
                     break;
                 }
         }
     }
-}
+    }
